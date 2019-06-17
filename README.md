@@ -23,6 +23,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v1
 helm template setup \
   --namespace argocd \
   --values setup/values-dev.yaml | kubectl apply -f -
+kubectl port-forward -n argocd svc/argocd-server 8080:443
+# see https://localhost:8080
 ```
 
 ## Secrets
