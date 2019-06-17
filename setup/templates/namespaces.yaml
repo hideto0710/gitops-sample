@@ -9,9 +9,6 @@ spec:
     repoURL: https://github.com/hideto0710/gitops-sample.git
     targetRevision: {{ .Values.spec.source.targetRevision }}
     path: namespaces
-    helm:
-      valueFiles:
-        - values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: argocd
