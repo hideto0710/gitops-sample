@@ -36,6 +36,8 @@ kubectl create secret generic nginx-top \
     --dry-run \
     --from-literal=index.html=HelloMessage -o yaml > tmp/secret.yaml
 kubeseal --format=yaml --cert=tmp/cert.pem < tmp/secret.yaml > nginx-app/sealedsecret.yaml
+kubectl port-forward -n app svc/nginx-service 8000:80
+# see http://localhost:8000
 ```
 
 ## Links
