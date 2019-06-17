@@ -4,5 +4,5 @@ spec:
     server: https://kubernetes.default.svc
   - namespace: sealed-secrets
     server: https://kubernetes.default.svc
-  - namespace: apps
+  - namespace: app
     server: https://kubernetes.default.svc
