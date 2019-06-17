@@ -30,10 +30,12 @@ helm template setup \
 mkdir tmp
 kubeseal --fetch-cert \
   --controller-namespace=sealed-secrets \
-  --controller-name=sealed-secrets \
-  > tmp/cert.pem
-kubectl create secret generic nginx-top --namespace app --dry-run --from-literal=index.html=Hello -o yaml > tmp/secret.yaml
-kubeseal --format=yaml --cert=cert.pem < tmp/secret.yaml > nginx-app/sealedsecret.yaml
+  --controller-name=sealed-secrets > tmp/cert.pem
+kubectl create secret generic nginx-top \
+    --namespace app \
+    --dry-run \
+    --from-literal=index.html=Hello -o yaml > tmp/secret.yaml
+kubeseal --format=yaml --cert=tmp/cert.pem < tmp/secret.yaml > nginx-app/sealedsecret.yaml
 ```
 
 ## Links
