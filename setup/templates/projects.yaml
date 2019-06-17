@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.env }}-projects
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hideto0710/gitops-sample.git
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: projects
+    helm:
+      valueFiles:
+        - value-{{ .Values.env }}.yaml
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: argocd

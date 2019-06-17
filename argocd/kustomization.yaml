@@ -1,0 +1,4 @@
+bases:
+  - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.0.2
+patchesStrategicMerge:
+  - overlays/argo-cd-cm.yaml

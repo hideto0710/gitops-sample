@@ -1,0 +1,6 @@
+env: dev
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    targetRevision: develop
