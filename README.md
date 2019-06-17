@@ -34,7 +34,7 @@ kubeseal --fetch-cert \
 kubectl create secret generic nginx-top \
     --namespace app \
     --dry-run \
-    --from-literal=index.html=Hello -o yaml > tmp/secret.yaml
+    --from-literal=index.html=HelloMessage -o yaml > tmp/secret.yaml
 kubeseal --format=yaml --cert=tmp/cert.pem < tmp/secret.yaml > nginx-app/sealedsecret.yaml
 ```
 
