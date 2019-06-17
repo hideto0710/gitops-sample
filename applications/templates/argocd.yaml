@@ -6,7 +6,7 @@ spec:
   destination:
     namespace: argocd
     server: {{ .Values.spec.destination.server }}
-  project: default
+  project: ops
   source:
     path: argocd
     repoURL: https://github.com/hideto0710/gitops-sample.git

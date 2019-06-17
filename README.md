@@ -19,9 +19,6 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v1
 helm template setup \
   --namespace argocd \
   --values setup/values-dev.yaml | kubectl apply -f -
-helm template setup \
-  --namespace argocd \
-  --values setup/values-prd.yaml | kubectl apply -f -
 ```
 
 ## Links
