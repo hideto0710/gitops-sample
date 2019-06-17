@@ -14,6 +14,7 @@
 minikube start --vm-driver=hyperkit
 
 kubectl create namespace argocd
+kubectl create namespace sealed-secrets
 # We use minikube for running kubernetes. So we can't setup Argo CD HA.
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v1.0.2/manifests/install.yaml
 helm template setup \
